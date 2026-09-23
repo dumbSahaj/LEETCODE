@@ -7,12 +7,15 @@ public:
             sumOdd += (2*i+1);
             sumEven += (2*i+2);
         }
-        for (int i = min(sumOdd,sumEven); i >= 1; i--){
-            if ( (sumOdd % i) == 0 && (sumEven % i ) == 0){
-                gcd = i;
-                break;
-            }
+        
+        return gcds(max(sumEven,sumOdd),min(sumEven,sumOdd));
+    }
+    int gcds(int n1,int n2){
+        if (n2 == 0) {
+            return n1;
         }
-        return gcd;
+        
+        return gcds(n2, n1 % n2);
+        
     }
 };
