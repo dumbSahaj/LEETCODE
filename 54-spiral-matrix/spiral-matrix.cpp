@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+    vector<int> myapp(vector<vector<int>>& matrix){
         vector<int> main;
         int m = matrix.size();
         int n = matrix[0].size();
@@ -8,7 +8,6 @@ public:
         circle(matrix, main, 0, m - 1, 0, n - 1);
         return main;
     }
-
     void circle(vector<vector<int>>& matrix, vector<int>& main,
                 int top, int bottom, int left, int right) {
 
@@ -50,5 +49,9 @@ public:
                 int col, int bottom, int top) {
         for (int i = bottom; i >= top; i--)
             main.push_back(matrix[i][col]);
+    }
+    
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        return myapp(matrix);
     }
 };
