@@ -51,6 +51,34 @@ public:
             main.push_back(matrix[i][col]);
     }
     
+
+    vector<int> rsol(vector<vector<int>>& matrix){
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int top = 0, left = 0, bottom = n-1, right = m-1;
+        vector<int> main; 
+
+        while(top <= bottom && left <= right){
+            for (int i = left ; i < right ; i++){
+            main.push_back(matrix[top][i]);
+            }
+            top++;
+            for (int i = top ; i < bottom ; i++){
+                main.push_back(matrix[i][right]);
+            }
+            right--;
+            for (int i = right ; i < left ; i++){
+                main.push_back(matrix[bottom][i]);
+            }
+            bottom--;
+            for (int i = bottom ; i < top ; i++){
+                main.push_back(matrix[i][left]);
+            }
+            left++;
+        }
+        return main;
+    }
+
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
         return myapp(matrix);
     }
