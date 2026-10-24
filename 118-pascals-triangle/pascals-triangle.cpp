@@ -7,9 +7,7 @@ public:
             vector<int> temp(i + 1, 1);
 
             for (int j = 1; j < i; j++) {
-                int s = main[i - 1][j];
-                int a = main[i - 1][j - 1];
-                temp[j] = a + s;
+                temp[j] = main[i - 1][j - 1] + main[i - 1][j];
             }
 
             main.push_back(temp);
