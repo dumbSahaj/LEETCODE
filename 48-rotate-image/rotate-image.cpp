@@ -5,6 +5,7 @@ public:
             for (int j = i+1 ; j < matrix[i].size() ; j++){
                 swap(matrix[i][j],matrix[j][i]);
             }
+            // idk why this one takes so much time 
             reverse(matrix[i].begin(), matrix[i].end());
         }
     }
