@@ -7,8 +7,7 @@ public:
         sort(nums.begin(), nums.end());
         return nums;
     }
-    
-    vector<int> sortedSquares(vector<int>& nums) {
+    vector<int> opt(vector<int>& nums){
         int j = nums.size()-1;
         int i = 0; 
         vector<int> ans;
@@ -26,5 +25,10 @@ public:
         }
         reverse(ans.begin(), ans.end());
         return ans;
+    }
+
+    
+    vector<int> sortedSquares(vector<int>& nums) {
+        return opt(nums);
     }
 };
