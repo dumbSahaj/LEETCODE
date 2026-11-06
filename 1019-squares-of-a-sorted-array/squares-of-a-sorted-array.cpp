@@ -29,6 +29,22 @@ public:
 
     
     vector<int> sortedSquares(vector<int>& nums) {
-        return opt(nums);
+        int j = nums.size()-1;
+        int i = 0; 
+        vector<int> ans;
+        while(i<=j){
+            if (abs(nums[i])>abs(nums[j])){
+                nums[i] = nums[i]*nums[i];
+                ans.push_back(nums[i]);
+                i++;
+            }
+            else {
+                nums[j] = nums[j]*nums[j];
+                ans.push_back(nums[j]);
+                j--;
+            }
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
     }
 };
