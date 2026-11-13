@@ -2,7 +2,8 @@ class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
-        k = k % n;
+        k = k % n; 
+        int a = 21
 
         vector<int> temp(k);
 
